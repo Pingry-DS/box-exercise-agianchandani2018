@@ -1,6 +1,3 @@
-//should be able to hold one "thing"
-// The <T> is a generic type
-
 public class Box <T>
 {
 
@@ -68,13 +65,18 @@ public class Box <T>
   	 return true; 
   }
   
-  
+  /**
+   * This takes a look at what's inside the box
+   * @return the contents of box
+   */
   public T peek()
   {
   	 return getContents();
   }
   
-
+  /**
+   * @return a string representation of the box
+   */
   public String toString()
   {
   	 return (contents + " in the box ");
@@ -85,27 +87,27 @@ public class Box <T>
 
     // Make two boxes
     Box<String> stringBox = new Box<String>();
-    //TODO start the second box with contents inside
+    //start the second box with contents inside
     //int n = 5;
     Box<Integer> intBox   = new Box<Integer>(5);
 
     // View contents (via toString method)
     System.out.println("The boxes contain: " + stringBox + ", " + intBox);
 
-    //TODO Add something to a box
+    //Add something to a box
 	stringBox.fill("puppies");
 
 
     // View contents (via toString method)
     System.out.println("The boxes contain: " + stringBox + ", " + intBox);
 
-    //TODO Test your peek method
+    //Test your peek method
 	System.out.println(intBox.peek());
 
     // View contents (via toString method)
     System.out.println("The boxes contain: " + stringBox + ", " + intBox);
 
-    //TODO Empty a box
+    //Empty a box
     intBox.empty();
 
 
