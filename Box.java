@@ -51,12 +51,33 @@ public class Box <T>
   	 isFull = false;
   	 return temp;
   }
+  
+  /**
+   * Fills the box with contents if empty
+   * @param T contents
+   * @return true if the box was filled successfully, and false if the box was already full.
+   */
+  public boolean fill(T conts)
+  {
+  	 if (isFull())
+  	 {
+  	 	return false;
+  	 }
+  	 
+  	 this.contents = conts;  //fills the box with stuff
+  	 return true; 
+  }
+  
+  
+  public T peek()
+  {
+  	 return getContents();
+  }
+  
 
   public String toString()
   {
-  	
-  	 
-  	 return ("The box contains " + contents + " and is full: " + isFull);
+  	 return (contents + " in the box ");
   }
 
   public static void main(String[] args)
@@ -65,25 +86,27 @@ public class Box <T>
     // Make two boxes
     Box<String> stringBox = new Box<String>();
     //TODO start the second box with contents inside
-    Box<Integer> intBox   = new Box<Integer>();
+    //int n = 5;
+    Box<Integer> intBox   = new Box<Integer>(5);
 
     // View contents (via toString method)
     System.out.println("The boxes contain: " + stringBox + ", " + intBox);
 
     //TODO Add something to a box
-
+	stringBox.fill("puppies");
 
 
     // View contents (via toString method)
     System.out.println("The boxes contain: " + stringBox + ", " + intBox);
 
     //TODO Test your peek method
-
+	System.out.println(intBox.peek());
 
     // View contents (via toString method)
     System.out.println("The boxes contain: " + stringBox + ", " + intBox);
 
-    //TODO Empty a boxes
+    //TODO Empty a box
+    intBox.empty();
 
 
 
